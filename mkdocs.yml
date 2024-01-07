@@ -1,0 +1,12 @@
+site_name: pincservices-developer-portal-docs
+docs_dir: docs
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - Plugins:
+      - Kubernetes: plugins/kubernetes.md
+      - ArgoCD: plugins/argocd.md
+plugins:
+  - techdocs-core
