@@ -2,6 +2,17 @@ import React from 'react';
 import { renderWithEffects } from '@backstage/test-utils';
 import App from './App';
 
+jest.mock('@backstage/core-components', () => {
+  const originalModule = jest.requireActual('@backstage/core-components');
+
+  // Mock the default export and named export 'foo'
+  return {
+    __esModule: true,
+    ...originalModule,
+    SignInPage: jest.fn().mockReturnValue('SignInPage'),
+  };
+});
+
 describe('App', () => {
   it('should render', async () => {
     process.env = {
