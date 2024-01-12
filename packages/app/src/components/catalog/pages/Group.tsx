@@ -1,5 +1,5 @@
 import {EntityLayoutWrapper} from "../contents/EntityLayoutWrapper";
-import {EntityLayout} from "@backstage/plugin-catalog";
+import {EntityLayout, EntityLinksCard} from "@backstage/plugin-catalog";
 import Grid from "@mui/material/Grid";
 import {EntityGroupProfileCard, EntityMembersListCard, EntityOwnershipCard} from "@backstage/plugin-org";
 import React from "react";
@@ -18,6 +18,9 @@ export const groupPage = (
                     </Grid>
                     <Grid item>
                         <EntityMembersListCard/>
+                    </Grid>
+                    <Grid item>
+                        <EntityLinksCard />
                     </Grid>
                 </Grid>
                 <Grid item container spacing={3} xs={12} md={6} lg={6} direction="column">

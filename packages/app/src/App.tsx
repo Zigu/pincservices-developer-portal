@@ -37,7 +37,7 @@ import { CatalogUnprocessedEntitiesPage } from '@backstage/plugin-catalog-unproc
 import { DevToolsPage } from '@backstage/plugin-devtools';
 import {CustomDevToolsPage} from "./components/devtools/CustomDevToolsPage";
 import {HomePage} from "./components/home/HomePage";
-import {HomepageCompositionRoot} from "@backstage/plugin-home";
+import {HomepageCompositionRoot, VisitListener} from "@backstage/plugin-home";
 import {PlaylistIndexPage, PlaylistPage} from "@backstage/plugin-playlist";
 
 // Additional system icons
@@ -154,6 +154,7 @@ export default app.createRoot(
     <AlertDisplay />
     <OAuthRequestDialog />
     <AppRouter>
+      <VisitListener />
       <Root>{routes}</Root>
     </AppRouter>
   </>,
