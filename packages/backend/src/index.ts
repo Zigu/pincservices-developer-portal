@@ -29,6 +29,7 @@ import sonarqube from './plugins/sonarqube';
 import changelog from './plugins/changelog';
 import playlist from './plugins/playlist';
 import permission from './plugins/permission';
+import jiraDashboard from './plugins/jiraDashboard';
 import { PluginEnvironment } from './types';
 import { ServerPermissionClient } from '@backstage/plugin-permission-node';
 import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
@@ -95,6 +96,7 @@ async function main() {
   const changelogEnv = useHotMemoize(module, () => createEnv('changelog'));
   const playlistEnv = useHotMemoize(module, () => createEnv('playlist'));
   const permissionEnv = useHotMemoize(module, () => createEnv('permission'));
+  const jiraDashboardEnv = useHotMemoize(module, () => createEnv('jira-dashboard'));
 
   const appEnv = useHotMemoize(module, () => createEnv('app'));
 
@@ -114,6 +116,7 @@ async function main() {
   apiRouter.use('/changelog', await changelog(changelogEnv));
   apiRouter.use('/playlist', await playlist(playlistEnv));
   apiRouter.use('/permission', await permission(permissionEnv));
+  apiRouter.use('/jira-dashboard', await jiraDashboard(jiraDashboardEnv));
 
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback
   apiRouter.use(notFoundHandler());

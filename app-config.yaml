@@ -64,6 +64,11 @@ gitlab:
     - System
     - Resource
 
+jiraDashboard:
+  token: ${JIRA_TOKEN}
+  baseUrl: ${JIRA_BASE_URL}
+  userEmailSuffix: ${JIRA_EMAIL_SUFFIX}
+
 proxy:
   endpoints:
     '/techradar':
