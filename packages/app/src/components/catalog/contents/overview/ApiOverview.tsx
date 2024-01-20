@@ -1,4 +1,4 @@
-import Grid from "@mui/material/Grid";
+import { Grid } from '@material-ui/core';
 import {
     EntityAboutCard,
     EntityLinksCard, EntitySwitch,
@@ -11,13 +11,13 @@ import {areLinksAvailable} from "../../../../lib/conditions";
 import {CustomRenderNode} from "../../CustomRenderNode";
 
 export const apiOverviewContent = (
-    <Grid container spacing={3} alignItems="start">
+    <Grid container spacing={3}>
         <Grid item xs={12}>
             {entityWarningContent}
         </Grid>
 
         { /* Generic info section */ }
-        <Grid item container spacing={3} xs={12} md={5} lg={5} direction="column">
+        <Grid item container spacing={3} xs={12} md={5} lg={5}>
             <EntitySwitch>
                 <EntitySwitch.Case if={areLinksAvailable}>
                     <Grid item xs={12}>
@@ -31,7 +31,7 @@ export const apiOverviewContent = (
         </Grid>
 
         { /* Relation section */ }
-        <Grid item container spacing={3} xs={12} md={7} lg={7} direction="column">
+        <Grid item container spacing={3} xs={12} md={7} lg={7}>
             <Grid item xs={12}>
                 <EntityCatalogGraphCard variant="gridItem" height={400} renderNode={CustomRenderNode}/>
             </Grid>

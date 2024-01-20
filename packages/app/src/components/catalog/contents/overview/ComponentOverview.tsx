@@ -1,4 +1,4 @@
-import Grid from "@mui/material/Grid";
+import { Grid } from '@material-ui/core';
 import {
     EntityAboutCard,
     EntityLinksCard,
@@ -15,7 +15,7 @@ import {areLinksAvailable, isChangelogFileRefAvailable} from "../../../../lib/co
 import {EntityChangelogCard} from "@rsc-labs/backstage-changelog-plugin";
 
 export const componentOverviewContent = (
-    <Grid container spacing={3} alignItems="start">
+    <Grid container spacing={3}>
         <Grid item xs={12}>
             {entityWarningContent}
         </Grid>

@@ -17,16 +17,16 @@ import { DependencyGraphTypes } from '@backstage/core-components';
 import { humanizeEntityRef } from '@backstage/plugin-catalog-react';
 import React, { useLayoutEffect, useRef, useState } from 'react';
 
-import { makeStyles } from 'tss-react/mui';
+import { makeStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 
 import { DEFAULT_NAMESPACE } from '@backstage/catalog-model';
 import {EntityNodeData} from "@backstage/plugin-catalog-graph";
 import {useApp} from "@backstage/core-plugin-api";
 
-import WorkIcon from '@mui/icons-material/Work';
+import WorkIcon from '@material-ui/icons/Work';
 
-const useStyles = makeStyles()(
+const useStyles = makeStyles(
     theme => ({
         node: {
             fill: theme.palette.grey[100],
@@ -134,7 +134,7 @@ export function EntityKindIcon({
 export function CustomRenderNode({
                                       node: { id, entity, color = 'default', focused, onClick },
                                   }: DependencyGraphTypes.RenderNodeProps<EntityNodeData>) {
-    const {classes} = useStyles();
+    const classes = useStyles();
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
     const idRef = useRef<SVGTextElement | null>(null);

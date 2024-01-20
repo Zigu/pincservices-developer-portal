@@ -1,5 +1,5 @@
 import React, {ReactNode, useMemo, useState} from "react";
-import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 import {EntityLayout} from "@backstage/plugin-catalog";
 import {EntityPlaylistDialog} from "@backstage/plugin-playlist";
 

@@ -12,22 +12,21 @@ import {useAsync} from 'react-use';
 import {EntityOwnershipCard} from '@backstage/plugin-org';
 
 import {ErrorReport} from '../../common';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import { makeStyles } from 'tss-react/mui'
+import { Grid, Box } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import {useHomepageQuickAccess} from '../../hooks/useHomepageQuickAccess';
 import {SearchContextProvider} from '@backstage/plugin-search-react';
 
-const useStyles = makeStyles()(() => ({
+const useStyles = makeStyles({
     img: {
         height: '30px',
         width: 'auto',
     }
-}));
+});
 
 const QuickAccess = () => {
 
-    const { classes } = useStyles();
+    const classes = useStyles();
     const { data, error, isLoading } = useHomepageQuickAccess();
     const featureFlagsApi = useApi(featureFlagsApiRef);
     const app = useApp();
@@ -129,8 +128,7 @@ export const HomePage = () => {
                         sx={{
                             display: 'flex',
                             flexDirection: 'column',
-                            alignItems: 'center',
-                            gap: 2,
+                            alignItems: 'center'
                         }}
                     >
                     <Grid container spacing={3}>

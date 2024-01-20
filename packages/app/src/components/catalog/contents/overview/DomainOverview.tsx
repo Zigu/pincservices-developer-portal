@@ -23,7 +23,7 @@ export const domainOverviewContent = (
         </Grid>
 
         { /* Generic info section */ }
-        <Grid item container spacing={3} xs={12} md={5} lg={5} direction="column">
+        <Grid item container spacing={3} xs={12} md={5} lg={5}>
             <EntitySwitch>
                 <EntitySwitch.Case if={areLinksAvailable}>
                     <Grid item xs={12}>
@@ -38,7 +38,7 @@ export const domainOverviewContent = (
 
 
         { /* Relation section */ }
-        <Grid item container spacing={3} xs={12} md={7} lg={7} direction="column">
+        <Grid item container spacing={3} xs={12} md={7} lg={7}>
             <Grid item xs={12}>
                 <EntityCatalogGraphCard
                     variant="gridItem"

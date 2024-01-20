@@ -138,6 +138,7 @@ describe('argo-cd', () => {
       worker.use(
           rest.get('*', (_, res, ctx) => res(ctx.json(getResponseStub))),
       );
+
       const rendered = render(
           <TestApiProvider apis={apis}>
           <EntityProvider entity={getEntityStub}>
@@ -145,6 +146,7 @@ describe('argo-cd', () => {
               </EntityProvider>
               </TestApiProvider>,
       );
+
       expect(await rendered.findByText('guestbook')).toBeInTheDocument();
       expect(await rendered.findByText('guestbook')).not.toHaveAttribute(
           'href',

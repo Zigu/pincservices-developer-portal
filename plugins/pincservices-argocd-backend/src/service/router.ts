@@ -113,7 +113,6 @@ export function createRouter({
 
   router.get('/find/name/:argoAppName', async (request, response) => {
     const argoAppName = request.params.argoAppName;
-      console.log(request);
     const argoAppNamespace = request.query.appNamespace as string;
 
     response.send(await argoSvc.findArgoApp({ name: argoAppName, appNamespace: argoAppNamespace }));

@@ -15,11 +15,11 @@ import {EmptyState} from "@backstage/core-components";
 import Button from "@mui/material/Button";
 import React from "react";
 import {EntityArgoCDOverviewCard, isArgocdAvailable} from "@internal/plugin-pincservices-argocd";
-import Grid from "@mui/material/Grid";
+import { Grid } from '@material-ui/core';
 
 
 export const cicdContent = (
-    <Grid container spacing={3} alignItems="start">
+    <Grid container spacing={3}>
         <EntitySwitch>
             <EntitySwitch.Case if={isArgocdAvailable}>
                 <Grid item xs={12}>

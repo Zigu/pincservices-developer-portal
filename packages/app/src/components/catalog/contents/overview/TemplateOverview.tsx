@@ -1,4 +1,4 @@
-import Grid from "@mui/material/Grid";
+import { Grid } from '@material-ui/core';
 import {
     EntityAboutCard,
     EntityLinksCard, EntitySwitch,
@@ -8,7 +8,7 @@ import {entityWarningContent} from "../EntityWarning";
 import {areLinksAvailable} from "../../../../lib/conditions";
 
 export const templateOverviewContent = (
-    <Grid container spacing={3} alignItems="start">
+    <Grid container spacing={3}>
         <Grid item xs={12}>
             {entityWarningContent}
         </Grid>

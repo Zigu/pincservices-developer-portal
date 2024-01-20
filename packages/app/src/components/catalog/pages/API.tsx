@@ -1,6 +1,6 @@
 import {EntityLayoutWrapper} from "../contents/EntityLayoutWrapper";
 import {EntityLayout} from "@backstage/plugin-catalog";
-import Grid from "@mui/material/Grid";
+import { Grid } from '@material-ui/core';
 import {EntityApiDefinitionCard} from "@backstage/plugin-api-docs";
 import React from "react";
 import {apiOverviewContent} from "../contents/overview/ApiOverview";

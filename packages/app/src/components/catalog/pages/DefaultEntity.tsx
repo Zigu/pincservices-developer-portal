@@ -1,4 +1,4 @@
-import Grid from "@mui/material/Grid";
+import { Grid } from '@material-ui/core';
 import {EntityAboutCard, EntityLayout, EntityLinksCard} from "@backstage/plugin-catalog";
 import {EntityCatalogGraphCard} from "@backstage/plugin-catalog-graph";
 import {EntityLayoutWrapper} from "../contents/EntityLayoutWrapper";
@@ -7,7 +7,7 @@ import {entityWarningContent} from "../contents/EntityWarning";
 import {CustomRenderNode} from "../CustomRenderNode";
 
 const defaultOverviewContent = (
-    <Grid container spacing={3} alignItems="stretch">
+    <Grid container spacing={3}>
         {entityWarningContent}
         <Grid item md={6}>
             <EntityAboutCard variant="gridItem"/>

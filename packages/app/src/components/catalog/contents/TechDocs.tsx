@@ -5,7 +5,7 @@ import {ReportIssue} from "@backstage/plugin-techdocs-module-addons-contrib";
 import {EntityGitlabReadmeCard, isGitlabAvailable} from "@immobiliarelabs/backstage-plugin-gitlab";
 
 import {EntitySwitch} from "@backstage/plugin-catalog";
-import {MissingAnnotationEmptyState} from "@backstage/core-components";
+import {MissingAnnotationEmptyState} from "@backstage/plugin-catalog-react";
 
 const TECHDOCS_ANNOTATION = 'backstage.io/techdocs-ref';
 

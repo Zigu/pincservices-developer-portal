@@ -42,12 +42,12 @@ import {PlaylistIndexPage, PlaylistPage} from "@backstage/plugin-playlist";
 
 // Additional system icons
 
-import CodeIcon from '@mui/icons-material/Code'
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import ViewListIcon from '@mui/icons-material/ViewList';
-import FactCheckIcon from '@mui/icons-material/FactCheck';
-import RadarIcon from '@mui/icons-material/Radar';
-import TrackChangesIcon from '@mui/icons-material/TrackChanges';
+import CodeIcon from '@material-ui/icons/Code'
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutlined';
+import ViewListIcon from '@material-ui/icons/ViewList';
+import FactCheckIcon from '@material-ui/icons/LibraryAddCheck';
+import MapIcon from '@material-ui/icons/Map';
+import TrackChangesIcon from '@material-ui/icons/TrackChanges';
 import {GitlabIcon} from "./components/customIcons/GitlabIcon";
 import {ConfluenceIcon} from "./components/customIcons/ConfluenceIcon";
 import {JiraIcon} from "./components/customIcons/JiraIcon";
@@ -73,7 +73,7 @@ const app = createApp({
     addCircleOutline: AddCircleOutlineIcon as any,
     viewList: ViewListIcon as any,
     factCheck: FactCheckIcon as any,
-    radar: RadarIcon as any,
+    radar: MapIcon as any,
     trackChanges: TrackChangesIcon as any,
     gitlab: GitlabIcon as any,
     confluence: ConfluenceIcon as any,

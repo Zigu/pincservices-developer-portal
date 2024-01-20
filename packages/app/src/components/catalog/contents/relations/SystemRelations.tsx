@@ -1,4 +1,4 @@
-import Grid from "@mui/material/Grid";
+import { Grid } from '@material-ui/core';
 import {Direction, EntityCatalogGraphCard} from "@backstage/plugin-catalog-graph";
 import { EntityHasComponentsCard, EntityHasResourcesCard } from "@backstage/plugin-catalog";
 import {EntityHasApisCard} from "@backstage/plugin-api-docs";
@@ -19,7 +19,7 @@ import {CustomRenderNode} from "../../CustomRenderNode";
 
 export const systemRelationsContent = (
 
-    <Grid container spacing={3} alignItems="start">
+    <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
             <EntityCatalogGraphCard
                 variant="gridItem"

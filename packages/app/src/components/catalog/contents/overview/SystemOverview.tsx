@@ -1,4 +1,4 @@
-import Grid from "@mui/material/Grid";
+import { Grid } from '@material-ui/core';
 import {
     EntityAboutCard,
     EntityLinksCard,
@@ -15,12 +15,12 @@ import {areLinksAvailable} from "../../../../lib/conditions";
 
 
 export const systemOverviewContent = (
-    <Grid container spacing={3} alignItems="start">
+    <Grid container spacing={3}>
         <Grid item xs={12}>
             {entityWarningContent}
         </Grid>
 
-        <Grid item container spacing={3} xs={12} md={5} lg={5} direction="column">
+        <Grid item container spacing={3} xs={12} md={5} lg={5}>
             { /* Generic info section */ }
             <EntitySwitch>
                 <EntitySwitch.Case if={areLinksAvailable}>
@@ -44,7 +44,7 @@ export const systemOverviewContent = (
             </EntitySwitch>
         </Grid>
 
-        <Grid item container spacing={3} xs={12} md={7} lg={7} direction="column">
+        <Grid item container spacing={3} xs={12} md={7} lg={7}>
             { /* Releases section */ }
             <EntitySwitch>
                 <EntitySwitch.Case if={isArgocdAvailable}>

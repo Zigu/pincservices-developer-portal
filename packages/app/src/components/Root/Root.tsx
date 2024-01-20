@@ -1,12 +1,15 @@
 import React, { PropsWithChildren } from 'react';
 
-import HomeIcon from '@mui/icons-material/Home';
-import LayersIcon from '@mui/icons-material/Layers';
-import ExtensionIcon from '@mui/icons-material/Extension';
-import RadarIcon from '@mui/icons-material/Radar';
-import InfoIcon from '@mui/icons-material/InfoOutlined'
-import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay';
-import CreateComponentIcon from '@mui/icons-material/AddCircleOutline';
+import HomeIcon from '@material-ui/icons/Home';
+import LayersIcon from '@material-ui/icons/Layers';
+import ExtensionIcon from '@material-ui/icons/Extension';
+import MapIcon from '@material-ui/icons/Map';
+import InfoIcon from '@material-ui/icons/InfoOutlined'
+import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
+import CreateComponentIcon from '@material-ui/icons/AddCircleOutlined';
+import LibraryBooks from "@material-ui/icons/LibraryBooks";
+import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
 import LogoFull from './LogoFull';
 import LogoIcon from './LogoIcon';
 import {
@@ -26,14 +29,11 @@ import {
   useSidebarOpenState,
   Link
 } from '@backstage/core-components';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
 import {catalogEntityCreatePermission, catalogEntityReadPermission} from "@backstage/plugin-catalog-common/alpha";
 import {usePermission} from "@backstage/plugin-permission-react";
-import {makeStyles} from 'tss-react/mui';
-import LibraryBooks from "@mui/icons-material/LibraryBooks";
+import { makeStyles } from '@material-ui/core';
 
-const useSidebarLogoStyles = makeStyles()(() => ({
+const useSidebarLogoStyles = makeStyles({
   root: {
     width: sidebarConfig.drawerWidthClosed,
     height: 3 * sidebarConfig.logoHeight,
@@ -41,16 +41,15 @@ const useSidebarLogoStyles = makeStyles()(() => ({
     flexFlow: 'row nowrap',
     alignItems: 'center',
     marginBottom: -14,
-    marginLeft: 24
   },
   link: {
     width: sidebarConfig.drawerWidthClosed,
     marginLeft: 24,
-  }
-}));
+  },
+});
 
 const SidebarLogo = () => {
-  const { classes }  = useSidebarLogoStyles();
+  const classes  = useSidebarLogoStyles();
   const { isOpen } = useSidebarOpenState();
 
   return (
@@ -88,7 +87,7 @@ export const Root = ({ children }: PropsWithChildren<{}>) => {
             <SidebarDivider />
             <SidebarScrollWrapper>
               <SidebarItem icon={PlaylistPlayIcon as any} to="playlist" text="Entity Playlists" />
-              <SidebarItem icon={RadarIcon as any} to="tech-radar" text="Tech Radar" />
+              <SidebarItem icon={MapIcon as any} to="tech-radar" text="Tech Radar" />
             </SidebarScrollWrapper>
           </SidebarGroup>
           <SidebarSpace />
