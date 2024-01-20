@@ -4454,6 +4454,23 @@
     pkginfo "^0.4.1"
     uid2 "^1.0.0"
 
+"@dweber019/backstage-plugin-endoflife@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@dweber019/backstage-plugin-endoflife/-/backstage-plugin-endoflife-0.0.2.tgz#3b498f9e4e5f0d32bf1769957f5e09566f85933a"
+  integrity sha512-EHmJRnY0cMaplw9crXfRN27bezwC+4AY5RK6+l41XO6yo/4DbQZfEFN+rBwOsfqAJdq27u+JuyOwzgKMIUDtJw==
+  dependencies:
+    "@backstage/catalog-model" "^1.4.3"
+    "@backstage/core-components" "^0.13.10"
+    "@backstage/core-plugin-api" "^1.8.2"
+    "@backstage/errors" "^1.2.3"
+    "@backstage/integration-react" "^1.1.23"
+    "@backstage/plugin-catalog-react" "^1.9.3"
+    "@material-ui/core" "^4.12.2"
+    "@material-ui/icons" "^4.9.1"
+    luxon "^3.4.4"
+    react-use "^17.2.4"
+    vis-timeline "^7.7.3"
+
 "@dweber019/backstage-plugin-tips@^0.0.7":
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/@dweber019/backstage-plugin-tips/-/backstage-plugin-tips-0.0.7.tgz#20ed015ce93a4212d7e5829ffe166e1c09876c17"
@@ -10183,7 +10200,7 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.7.tgz#50ae4353eaaddc04044279812f52c8c65857dbcb"
   integrity sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==
 
-"@types/react-dom@*", "@types/react-dom@^18", "@types/react-dom@^18.0.0":
+"@types/react-dom@*", "@types/react-dom@^18.0.0":
   version "18.2.18"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.18.tgz#16946e6cd43971256d874bc3d0a72074bb8571dd"
   integrity sha512-TJxDm6OfAX2KJWJdMEVTwWke5Sc/E/RlnPGvGfS0W7+6ocy2xhDVQVh/KvC2Uf7kACs+gDytdusDSdWfWkaNzw==
@@ -10228,10 +10245,19 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.13.1 || ^17.0.0", "@types/react@^18":
+"@types/react@*":
   version "18.2.48"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.48.tgz#11df5664642d0bd879c1f58bc1d37205b064e8f1"
   integrity sha512-qboRCl6Ie70DQQG9hhNREz81jqC1cs9EVNcjQ1AU+jH6NFfSAhVVbrrY/+nSF+Bsk4AOwm9Qa61InvMCyV+H3w==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^16.13.1 || ^17.0.0":
+  version "17.0.75"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.75.tgz#cffbc76840a12fcadaf5a3cf14878bb06efcf73d"
+  integrity sha512-MSA+NzEzXnQKrqpO63CYqNstFjsESgvJAdAyyJ1n6ZQq/GLgf6nOfIKwk+Twuz0L1N6xPe+qz5xRCJrbhMaLsw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -19313,7 +19339,7 @@ lunr@^2.3.9:
   resolved "https://registry.yarnpkg.com/lunr/-/lunr-2.3.9.tgz#18b123142832337dd6e964df1a5a7707b25d35e1"
   integrity sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==
 
-luxon@^3.0.0, luxon@^3.3.0, luxon@^3.4.3:
+luxon@^3.0.0, luxon@^3.3.0, luxon@^3.4.3, luxon@^3.4.4:
   version "3.4.4"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.4.4.tgz#cf20dc27dc532ba41a169c43fdcc0063601577af"
   integrity sha512-zobTr7akeGHnv7eBOXcRgMeCP6+uyYsczwmeRCauvpvaAltgNyTbLH/+VaEAPUeWBT+1GuNmz4wC/6jtQzbbVA==
@@ -26381,6 +26407,11 @@ victory-zoom-container@^36.6.11, victory-zoom-container@^36.7.0:
     lodash "^4.17.19"
     prop-types "^15.8.1"
     victory-core "^36.7.0"
+
+vis-timeline@^7.7.3:
+  version "7.7.3"
+  resolved "https://registry.yarnpkg.com/vis-timeline/-/vis-timeline-7.7.3.tgz#79434eb3029169bff8de1b5012aa5c29786d6594"
+  integrity sha512-hGMzTttdOFWaw1PPlJuCXU2/4UjnsIxT684Thg9fV6YU1JuKZJs3s3BrJgZ4hO3gu5i1hsMe1YIi96o+eNT0jg==
 
 vm-browserify@^1.0.1:
   version "1.1.2"
