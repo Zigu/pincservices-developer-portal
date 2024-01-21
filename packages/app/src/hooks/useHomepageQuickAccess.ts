@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { QuickAccessLinks } from '../types/types';
 import {useApi} from "@backstage/core-plugin-api";
 import {homepageQuickAccessApiRef} from "../apis";
-import {useAsync} from "react-use";
+import useAsync from "react-use/lib/useAsync";
 
 export const useHomepageQuickAccess = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true);

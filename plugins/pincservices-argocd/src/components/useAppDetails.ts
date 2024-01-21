@@ -1,6 +1,6 @@
 
 import { configApiRef, errorApiRef, useApi } from '@backstage/core-plugin-api';
-import { useAsyncRetry } from 'react-use';
+import useAsyncRetry from 'react-use/lib/useAsyncRetry';
 import { argoCDApiRef } from '../api';
 import { ArgoCDAppDetails } from '../types';
 
@@ -107,7 +107,7 @@ export const useAppDetails = ({
             }
             if (argoSearchMethod && appSelector) {
                 const kubeInfo = await api.serviceLocatorUrl({
-                    appSelector: appSelector as string,
+                    appSelector,
                     appNamespace,
                 });
                 if (kubeInfo instanceof Error) return kubeInfo;
@@ -162,7 +162,7 @@ export const useAppDetails = ({
                 }
                 return result;
             }
-            return Promise.reject('Neither appName nor appSelector provided');
+            return Promise.reject(new Error('Neither appName nor appSelector provided'));
         } catch (e: any) {
             errorApi.post(new Error('Something went wrong'));
             return Promise.reject(e);

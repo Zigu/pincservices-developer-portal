@@ -8,12 +8,11 @@ import {
 import {Content, Header, InfoCard, Page, Progress} from '@backstage/core-components';
 import {featureFlagsApiRef, IconComponent, identityApiRef, useApi, useApp} from '@backstage/core-plugin-api';
 import {CatalogApi, catalogApiRef, EntityProvider} from '@backstage/plugin-catalog-react';
-import {useAsync} from 'react-use';
+import useAsync from 'react-use/lib/useAsync';
 import {EntityOwnershipCard} from '@backstage/plugin-org';
 
 import {ErrorReport} from '../../common';
-import { Grid, Box } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core';
+import { Grid, Box, makeStyles } from '@material-ui/core';
 import {useHomepageQuickAccess} from '../../hooks/useHomepageQuickAccess';
 import {SearchContextProvider} from '@backstage/plugin-search-react';
 

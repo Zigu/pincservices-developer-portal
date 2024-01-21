@@ -1,12 +1,12 @@
-import { createBackend } from '@backstage/backend-defaults';
+import {createBackend} from '@backstage/backend-defaults';
 import {
   gitlabPlugin,
   catalogPluginGitlabFillerProcessorModule,
 } from '@immobiliarelabs/backstage-plugin-gitlab-backend';
 import jiraDashboardPlugin from '@axis-backstage/plugin-jira-dashboard-backend';
-import { legacyPlugin } from '@backstage/backend-common';
+import {legacyPlugin} from '@backstage/backend-common';
 import {policyExtensionPoint} from "@backstage/plugin-permission-node/alpha";
-import { createBackendModule } from '@backstage/backend-plugin-api';
+import {createBackendModule} from '@backstage/backend-plugin-api';
 import {GlobalPermissionPolicy} from "./plugins/permissions/GlobalPermissionPolicy";
 import {adrModuleCatalogCollator} from "./plugins/searchCollators";
 
@@ -15,8 +15,8 @@ const permissionModuleGlobalPolicy = createBackendModule({
   moduleId: 'global-permission-policy',
   register(reg) {
     reg.registerInit({
-      deps: { policy: policyExtensionPoint },
-      async init({ policy }) {
+      deps: {policy: policyExtensionPoint},
+      async init({policy}) {
         policy.setPolicy(new GlobalPermissionPolicy());
       },
     });
@@ -35,7 +35,8 @@ backend.add(import('@backstage/plugin-catalog-backend/alpha'));
 backend.add(import('@backstage/plugin-devtools-backend'));
 backend.add(import('@backstage/plugin-kubernetes-backend/alpha'));
 backend.add(import('@backstage/plugin-playlist-backend'));
-/*backend.add(
+/*
+backend.add(
   import('@backstage/plugin-permission-backend-module-allow-all-policy'),
 );
  */
