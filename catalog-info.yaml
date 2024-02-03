@@ -1,13 +1,59 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: System
 metadata:
   name: pincservices-developer-portal
+  title: Developer Portal
+  # Example for optional annotations
+  annotations:
+    github.com/project-slug: Zigu/pincservices-developer-portal
+    argocd/app-name: developer-portal
+    argocd/app-namespace: argocd
+    backstage.io/kubernetes-id: developer-portal
+    backstage.io/kubernetes-label-selector: 'app.kubernetes.io/instance=developer-portal'
+    backstage.io/kubernetes-namespace: developer-portal
+spec:
+  owner: user:zigu
+  lifecycle: experimental
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: pincservices-developer-portal-service
+  title: Developer Portal Service
   description: An example of a Backstage application.
   # Example for optional annotations
   annotations:
     github.com/project-slug: Zigu/pincservices-developer-portal
     backstage.io/techdocs-ref: dir:.
+    argocd/app-name: developer-portal
+    argocd/app-namespace: argocd
+    backstage.io/kubernetes-id: developer-portal
+    backstage.io/kubernetes-label-selector: 'app.kubernetes.io/instance=developer-portal,app.kubernetes.io/name=developer-portal'
+    backstage.io/kubernetes-namespace: developer-portal
 spec:
   type: website
-  owner: porscha@pincservices.de
+  system: pincservices-developer-portal
+  owner: user:zigu
   lifecycle: experimental
+  dependsOn:
+    - resource:pincservices-developer-portal-db
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pincservices-developer-portal-db
+  title: Developer Portal Database
+  description: DB of the developer portal
+  # Example for optional annotations
+  annotations:
+    argocd/app-name: developer-portal
+    argocd/app-namespace: argocd
+    backstage.io/kubernetes-label-selector: 'app.kubernetes.io/instance=developer-portal,app.kubernetes.io/name=postgresql'
+    backstage.io/kubernetes-namespace: developer-portal
+spec:
+  type: postgresql
+  system: pincservices-developer-portal
+  owner: user:zigu
+  lifecycle: production

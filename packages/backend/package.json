@@ -50,6 +50,7 @@
     "@backstage/plugin-techdocs-backend": "^1.9.2",
     "@immobiliarelabs/backstage-plugin-gitlab-backend": "^6.4.0",
     "@internal/plugin-pincservices-argocd-backend": "^0.1.0",
+    "@janus-idp/backstage-plugin-keycloak-backend": "^1.8.0",
     "@rsc-labs/backstage-changelog-plugin-backend": "^0.3.1",
     "@rsc-labs/backstage-highlights-plugin-backend": "^0.1.6",
     "app": "link:../app",
@@ -66,7 +67,8 @@
     "@types/dockerode": "^3.3.0",
     "@types/express": "^4.17.6",
     "@types/express-serve-static-core": "^4.17.5",
-    "@types/luxon": "^2.0.4"
+    "@types/luxon": "^2.0.4",
+    "@types/backstage-plugin-keycloak-backend": "^"
   },
   "files": [
     "dist"
