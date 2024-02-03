@@ -60,6 +60,7 @@ backend.add(catalogPluginGitlabFillerProcessorModule);
 backend.add(legacyPlugin('argocd', import('./plugins/argocd')));
 backend.add(legacyPlugin('changelog', import('./plugins/changelog')));
 backend.add(legacyPlugin('auth', import('./plugins/auth')));
+backend.add(legacyPlugin('highlights', import('./plugins/highlights')));
 backend.add(jiraDashboardPlugin());
 
 backend.start();

@@ -59,6 +59,7 @@
     "@roadiehq/backstage-plugin-github-pull-requests": "^2.5.20",
     "@roadiehq/backstage-plugin-jira": "^2.5.0",
     "@rsc-labs/backstage-changelog-plugin": "^0.4.4",
+    "@rsc-labs/backstage-highlights-plugin": "^0.1.5",
     "history": "^5.0.0",
     "react": "^18.0.2",
     "react-dom": "^18.0.2",

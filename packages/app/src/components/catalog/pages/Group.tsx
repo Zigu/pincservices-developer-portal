@@ -13,18 +13,18 @@ export const groupPage = (
                     {entityWarningContent}
                 </Grid>
                 <Grid item container spacing={3} xs={12} md={6} lg={6}>
-                    <Grid item>
+                    <Grid item xs={12}>
                         <EntityGroupProfileCard variant="gridItem"/>
                     </Grid>
-                    <Grid item>
+                    <Grid item xs={12}>
                         <EntityMembersListCard/>
                     </Grid>
-                    <Grid item>
+                    <Grid item xs={12}>
                         <EntityLinksCard />
                     </Grid>
                 </Grid>
                 <Grid item container spacing={3} xs={12} md={6} lg={6}>
-                    <Grid item>
+                    <Grid item xs={12}>
                         <EntityOwnershipCard variant="gridItem"/>
                     </Grid>
                 </Grid>

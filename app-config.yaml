@@ -87,6 +87,17 @@ proxy:
 aws:
   accounts: []
 
+kubernetes:
+  serviceLocatorMethod:
+    type: 'multiTenant'
+  clusterLocatorMethods: []
+
+argocd:
+  namespacedApps: true
+  username: backstage
+  password: test
+  appLocatorMethods: []
+
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
 # and an external cloud storage when deploying TechDocs for production use-case.

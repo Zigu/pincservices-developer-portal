@@ -133,7 +133,7 @@ export const HomePage = () => {
                     <Grid container spacing={3}>
                         <Grid item xs={12} md={12}>
                             <EntityProvider entity={user}>
-                                <EntityOwnershipCard hideRelationsToggle />
+                                <EntityOwnershipCard hideRelationsToggle entityFilterKind={['Component', 'API', 'System', 'Resource', 'Template']}/>
                             </EntityProvider>
                         </Grid>
                         <Grid item xs={12} md={6}>

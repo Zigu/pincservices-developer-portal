@@ -9,6 +9,7 @@ import {entityWarningContent} from "../EntityWarning";
 import {EntityArgoCDStatusCard, isArgocdAvailable} from "@internal/plugin-pincservices-argocd";
 
 import {areLinksAvailable} from "../../../../lib/conditions";
+import {EntityEndOfLifeCard, isEndOfLifeAvailable} from "@dweber019/backstage-plugin-endoflife";
 
 export const resourceOverviewContent = (
     <Grid container spacing={3}>
@@ -30,6 +31,14 @@ export const resourceOverviewContent = (
                 <EntityAboutCard />
             </Grid>
 
+            { /* End of Life section */}
+            <EntitySwitch>
+              <EntitySwitch.Case if={isEndOfLifeAvailable}>
+                <Grid item xs={12}>
+                  <EntityEndOfLifeCard />
+                </Grid>
+              </EntitySwitch.Case>
+            </EntitySwitch>
         </Grid>
 
 

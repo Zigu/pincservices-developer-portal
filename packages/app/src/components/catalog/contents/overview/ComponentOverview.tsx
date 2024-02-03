@@ -18,9 +18,13 @@ import {EntityArgoCDStatusCard, isArgocdAvailable} from "@internal/plugin-pincse
 import {areLinksAvailable, isChangelogFileRefAvailable} from "../../../../lib/conditions";
 import {EntityChangelogCard} from "@rsc-labs/backstage-changelog-plugin";
 import {EntityEndOfLifeCard, isEndOfLifeAvailable} from "@dweber019/backstage-plugin-endoflife";
+import {EntityHighlightsCard} from "@rsc-labs/backstage-highlights-plugin";
 
 export const componentOverviewContent = (
   <Grid container spacing={3}>
+    <Grid item md={12} xs={12}>
+      <EntityHighlightsCard />
+    </Grid>
     <Grid item xs={12}>
       {entityWarningContent}
     </Grid>
