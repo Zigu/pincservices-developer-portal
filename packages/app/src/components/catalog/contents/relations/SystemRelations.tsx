@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import {Direction, EntityCatalogGraphCard} from "@backstage/plugin-catalog-graph";
 import { EntityHasComponentsCard, EntityHasResourcesCard } from "@backstage/plugin-catalog";
 import {EntityHasApisCard} from "@backstage/plugin-api-docs";
@@ -13,7 +13,7 @@ import {
     RELATION_PART_OF,
     RELATION_PROVIDES_API
 } from "@backstage/catalog-model";
-import {minimizedApiEntityColumns} from "./renderingUtils";
+import {minimizedApiEntityColumns} from "../../renderingUtils";
 import {CustomRenderNode} from "../../CustomRenderNode";
 
 

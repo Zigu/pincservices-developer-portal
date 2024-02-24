@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import {entityWarningContent} from "../EntityWarning";
 import {EntityAboutCard, EntityLinksCard, EntitySwitch} from "@backstage/plugin-catalog";
 import React from "react";

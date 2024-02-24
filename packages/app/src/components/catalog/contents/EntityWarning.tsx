@@ -1,5 +1,5 @@
 import {EntityOrphanWarning, EntityProcessingErrorsPanel, EntityRelationWarning, EntitySwitch, hasCatalogProcessingErrors, hasRelationWarnings, isOrphan} from "@backstage/plugin-catalog";
-import { Grid } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import React from "react";
 import {EntityTipsDialog} from "@dweber019/backstage-plugin-tips";
 

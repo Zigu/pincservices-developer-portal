@@ -1,0 +1,1 @@
+export { zallyApiLintPlugin, ZallyAPILintContent } from './plugin';

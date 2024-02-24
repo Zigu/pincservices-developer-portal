@@ -12,6 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import LogoFull from './LogoFull';
 import LogoIcon from './LogoIcon';
+import GroupIcon from '@material-ui/icons/People';
 import {
   Settings as SidebarSettings,
   UserSettingsSignInAvatar,
@@ -31,7 +32,8 @@ import {
 } from '@backstage/core-components';
 import {catalogEntityCreatePermission, catalogEntityReadPermission} from "@backstage/plugin-catalog-common/alpha";
 import {usePermission} from "@backstage/plugin-permission-react";
-import { makeStyles } from '@material-ui/core';
+import makeStyles from '@material-ui/core/styles/makeStyles';
+import {MyGroupsSidebarItem} from "@backstage/plugin-org";
 
 const useSidebarLogoStyles = makeStyles({
   root: {
@@ -79,6 +81,11 @@ export const Root = ({ children }: PropsWithChildren<{}>) => {
           <SidebarGroup label="Menu" icon={<MenuIcon />}>
             {/* Global nav, not org-specific */}
             <SidebarItem icon={HomeIcon as any} to="/" text="Home" />
+            <MyGroupsSidebarItem
+                     singularTitle="My Squad"
+                     pluralTitle="My Squads"
+                     icon={GroupIcon}
+                   />
             {entityReadAllowed && <SidebarItem icon={LayersIcon as any} to="catalog" text="Catalog" />}
             {entityReadAllowed && <SidebarItem icon={ExtensionIcon as any} to="api-docs" text="APIs" />}
             <SidebarItem icon={LibraryBooks as any} to="docs" text="Docs" />

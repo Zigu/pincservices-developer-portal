@@ -27,7 +27,7 @@ import { entityPage } from './components/catalog/EntityPage';
 import { searchPage } from './components/search/SearchPage';
 import { Root } from './components/Root';
 
-import {AlertDisplay, OAuthRequestDialog, SignInPage} from '@backstage/core-components';
+import {AlertDisplay, AutoLogout, OAuthRequestDialog, SignInPage} from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
@@ -52,6 +52,8 @@ import {GitlabIcon} from "./components/customIcons/GitlabIcon";
 import {ConfluenceIcon} from "./components/customIcons/ConfluenceIcon";
 import {JiraIcon} from "./components/customIcons/JiraIcon";
 import {ConfluenceSmallIcon} from "./components/customIcons/ConfluenceSmallIcon";
+import developerPortalThemes from "./themes/developerPortalThemes";
+import {apiExplorerColumns, catalogIndexColumns} from "./components/catalog/renderingUtils";
 
 const app = createApp({
   apis,
@@ -68,6 +70,7 @@ const app = createApp({
       />
     )
   },
+  themes: developerPortalThemes,
   icons: {
     code: CodeIcon as any,
     addCircleOutline: AddCircleOutlineIcon as any,
@@ -104,7 +107,7 @@ const routes = (
     <Route path="/" element={<HomepageCompositionRoot/>}>
       <HomePage/>
     </Route>
-    <Route path="/catalog" element={<RequirePermission permission={catalogEntityReadPermission} resourceRef="*"><CatalogIndexPage/></RequirePermission>}/>
+    <Route path="/catalog" element={<RequirePermission permission={catalogEntityReadPermission} resourceRef="*"><CatalogIndexPage columns={catalogIndexColumns}/></RequirePermission>}/>
     <Route
       path="/catalog/:namespace/:kind/:name"
       element={<CatalogEntityPage />}
@@ -121,7 +124,7 @@ const routes = (
       </TechDocsAddons>
     </Route>
     <Route path="/create" element={<ScaffolderPage />} />
-    <Route path="/api-docs" element={<ApiExplorerPage />} />
+    <Route path="/api-docs" element={<ApiExplorerPage columns={apiExplorerColumns}/>} />
     <Route
       path="/tech-radar"
       element={<TechRadarPage width={1500} height={800} />}
@@ -151,6 +154,7 @@ const routes = (
 
 export default app.createRoot(
   <>
+    <AutoLogout />
     <AlertDisplay />
     <OAuthRequestDialog />
     <AppRouter>

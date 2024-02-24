@@ -1,8 +1,4 @@
-import {
-  EntityLayout,
-  EntitySwitch,
-  isComponentType
-} from "@backstage/plugin-catalog";
+import {EntityLayout, EntitySwitch, isComponentType} from "@backstage/plugin-catalog";
 import React from "react";
 import {EntityLayoutWrapper} from "../contents/EntityLayoutWrapper";
 import {cicdContent} from "../contents/CICD";
@@ -14,6 +10,7 @@ import {EntityAdrContent, isAdrAvailable} from "@backstage/plugin-adr";
 import {EntityKubernetesContent} from "@backstage/plugin-kubernetes";
 import {TopologyPage} from "@janus-idp/backstage-plugin-topology";
 import {EntityJiraDashboardContent, isJiraDashboardAvailable} from "@axis-backstage/plugin-jira-dashboard";
+import {scoresContent} from "../contents/Scores";
 
 const serviceEntityPage = (
   <EntityLayoutWrapper>
@@ -44,6 +41,10 @@ const serviceEntityPage = (
     <EntityLayout.Route if={isAdrAvailable} path="/adrs" title="ADRs">
       <EntityAdrContent/>
     </EntityLayout.Route>
+
+      <EntityLayout.Route path="/score" title="Score">
+          {scoresContent}
+      </EntityLayout.Route>
 
     <EntityLayout.Route
       if={isJiraDashboardAvailable}
@@ -87,6 +88,10 @@ const websiteEntityPage = (
       <EntityAdrContent/>
     </EntityLayout.Route>
 
+      <EntityLayout.Route path="/score" title="Score">
+          {scoresContent}
+      </EntityLayout.Route>
+
     <EntityLayout.Route
       if={isJiraDashboardAvailable}
       path="/jira-dashboard"
@@ -119,6 +124,10 @@ const libraryEntityPage = (
     <EntityLayout.Route if={isAdrAvailable} path="/adrs" title="ADRs">
       <EntityAdrContent/>
     </EntityLayout.Route>
+
+      <EntityLayout.Route path="/score" title="Score">
+          {scoresContent}
+      </EntityLayout.Route>
   </EntityLayoutWrapper>
 );
 

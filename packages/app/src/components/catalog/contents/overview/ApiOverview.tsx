@@ -1,8 +1,5 @@
-import { Grid } from '@material-ui/core';
-import {
-    EntityAboutCard,
-    EntityLinksCard, EntitySwitch,
-} from "@backstage/plugin-catalog";
+import Grid from '@material-ui/core/Grid';
+import {EntityAboutCard, EntityLinksCard, EntitySwitch,} from "@backstage/plugin-catalog";
 import React from "react";
 import {entityWarningContent} from "../EntityWarning";
 import {EntityCatalogGraphCard} from "@backstage/plugin-catalog-graph";
@@ -15,7 +12,11 @@ export const apiOverviewContent = (
         <Grid item xs={12}>
             {entityWarningContent}
         </Grid>
-
+        {/*
+        <Grid item md={12} xs={12}>
+            <EntityHighlightsCard />
+        </Grid>
+        */}
         { /* Generic info section */ }
         <Grid item container spacing={3} xs={12} md={5} lg={5}>
             <EntitySwitch>

@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import {EntityAboutCard, EntityLayout, EntityLinksCard} from "@backstage/plugin-catalog";
 import {EntityCatalogGraphCard} from "@backstage/plugin-catalog-graph";
 import {EntityLayoutWrapper} from "../contents/EntityLayoutWrapper";

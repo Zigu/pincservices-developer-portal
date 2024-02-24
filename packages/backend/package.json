@@ -50,6 +50,7 @@
     "@backstage/plugin-techdocs-backend": "^1.9.5",
     "@immobiliarelabs/backstage-plugin-gitlab-backend": "^6.4.0",
     "@janus-idp/backstage-plugin-keycloak-backend": "^1.8.2",
+    "@redhat-developer/plugin-scaffolder-odo-actions": "^0.20.0",
     "@roadiehq/backstage-plugin-argo-cd-backend": "^2.14.0",
     "@rsc-labs/backstage-changelog-plugin-backend": "^0.3.1",
     "@rsc-labs/backstage-highlights-plugin-backend": "^0.1.6",

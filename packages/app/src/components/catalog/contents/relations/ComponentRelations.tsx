@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import {Direction, EntityCatalogGraphCard} from "@backstage/plugin-catalog-graph";
 import {
     EntityDependsOnComponentsCard,
@@ -7,7 +7,7 @@ import {
 } from "@backstage/plugin-catalog";
 import {EntityConsumedApisCard, EntityProvidedApisCard} from "@backstage/plugin-api-docs";
 import React from "react";
-import {minimizedApiEntityColumns} from "./renderingUtils";
+import {minimizedApiEntityColumns, minimizedComponentsEntityColumns, minimizedResourceEntityColumns} from "../../renderingUtils";
 import {CustomRenderNode} from "../../CustomRenderNode";
 
 
@@ -20,7 +20,7 @@ export const componentRelationsContent = (
             height={900} renderNode={CustomRenderNode}/>
     </Grid>
 
-    <Grid item xs={12} md={6} container spacing={1}>
+    <Grid item xs={12} md={6} container spacing={1} alignContent="flex-start">
         <Grid item xs={12}>
             <EntityProvidedApisCard variant="gridItem" columns={minimizedApiEntityColumns}/>
         </Grid>
@@ -28,14 +28,14 @@ export const componentRelationsContent = (
             <EntityConsumedApisCard variant="gridItem" columns={minimizedApiEntityColumns}/>
         </Grid>
         <Grid item xs={12}>
-            <EntityHasSubcomponentsCard variant="gridItem"/>
+            <EntityDependsOnComponentsCard variant="gridItem" columns={minimizedComponentsEntityColumns}/>
         </Grid>
         <Grid item xs={12}>
-            <EntityDependsOnComponentsCard variant="gridItem"/>
+            <EntityDependsOnResourcesCard variant="gridItem" columns={minimizedResourceEntityColumns}/>
         </Grid>
-        <Grid item xs={12}>
-            <EntityDependsOnResourcesCard variant="gridItem"/>
-        </Grid>
+    </Grid>
+    <Grid item xs={12}>
+        <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
 </Grid>
 );

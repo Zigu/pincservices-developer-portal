@@ -1,32 +1,32 @@
-import {Grid} from '@material-ui/core';
-import {EntityAboutCard, EntityLabelsCard, EntityLinksCard, EntitySwitch, hasLabels} from "@backstage/plugin-catalog";
+import Grid from '@material-ui/core/Grid';
+import {EntityAboutCard, EntityLabelsCard, EntityLinksCard, EntitySwitch, hasLabels, isComponentType} from "@backstage/plugin-catalog";
 import React from "react";
 import {entityWarningContent} from "../EntityWarning";
 import {EntitySonarQubeCard} from "@backstage/plugin-sonarqube";
 import {isSonarQubeAvailable} from "@backstage/plugin-sonarqube-react";
-import {
-  EntityGitlabLanguageCard,
-  EntityGitlabReleasesCard,
-  isGitlabAvailable
-} from "@immobiliarelabs/backstage-plugin-gitlab";
+import {EntityGitlabLanguageCard, EntityGitlabReleasesCard, isGitlabAvailable} from "@immobiliarelabs/backstage-plugin-gitlab";
 import {EntityJiraOverviewCard, isJiraAvailable} from "@roadiehq/backstage-plugin-jira";
 import {EntityArgoCDOverviewCard, isArgocdAvailable} from "@roadiehq/backstage-plugin-argo-cd";
 import {areLinksAvailable, isChangelogFileRefAvailable} from "../../../../lib/conditions";
 import {EntityChangelogCard} from "@rsc-labs/backstage-changelog-plugin";
 import {EntityEndOfLifeCard, isEndOfLifeAvailable} from "@dweber019/backstage-plugin-endoflife";
-import {EntityHighlightsCard} from "@rsc-labs/backstage-highlights-plugin";
+import {EntityProvidedApisCard} from "@backstage/plugin-api-docs";
+import {minimizedApiEntityColumns} from "../../renderingUtils";
 
 export const componentOverviewContent = (
   <Grid container spacing={3}>
-    <Grid item md={12} xs={12}>
-      <EntityHighlightsCard />
-    </Grid>
+
     <Grid item xs={12}>
       {entityWarningContent}
     </Grid>
 
-    <Grid item container spacing={3} xs={12} md={5} lg={5}>
+    <Grid item container xs={12} md={5} lg={5} spacing={3} alignContent="flex-start">
       { /* Generic info section */}
+
+      <Grid item xs={12}>
+        <EntityAboutCard/>
+      </Grid>
+
       <EntitySwitch>
         <EntitySwitch.Case if={areLinksAvailable}>
           <Grid item xs={12}>
@@ -34,10 +34,6 @@ export const componentOverviewContent = (
           </Grid>
         </EntitySwitch.Case>
       </EntitySwitch>
-
-      <Grid item xs={12}>
-        <EntityAboutCard/>
-      </Grid>
 
       <EntitySwitch>
         <EntitySwitch.Case if={hasLabels}>
@@ -54,6 +50,12 @@ export const componentOverviewContent = (
           </Grid>
         </EntitySwitch.Case>
       </EntitySwitch>
+
+      {/*
+      <Grid item xs={12}>
+        <EntityHighlightsCard />
+      </Grid>
+      */}
 
       { /* Quality section */}
       <EntitySwitch>
@@ -75,12 +77,21 @@ export const componentOverviewContent = (
 
     </Grid>
 
-    <Grid item container spacing={3} xs={12} md={7} lg={7}>
+    <Grid item container xs={12} md={7} lg={7} spacing={3} alignContent="flex-start">
+
+      <EntitySwitch>
+        <EntitySwitch.Case if={isComponentType('service')}>
+          <Grid item xs={12}>
+            <EntityProvidedApisCard variant="gridItem" columns={minimizedApiEntityColumns}/>
+          </Grid>
+        </EntitySwitch.Case>
+      </EntitySwitch>
+
       { /* Releases section */}
       <EntitySwitch>
         <EntitySwitch.Case if={isArgocdAvailable}>
           <Grid item xs={12}>
-            <EntityArgoCDOverviewCard />
+            <EntityArgoCDOverviewCard/>
           </Grid>
         </EntitySwitch.Case>
       </EntitySwitch>

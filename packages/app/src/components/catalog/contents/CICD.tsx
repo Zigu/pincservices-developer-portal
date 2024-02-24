@@ -1,5 +1,6 @@
 import {EntitySwitch} from "@backstage/plugin-catalog";
 import {
+    EntityGitlabCoverageCard,
     EntityGitlabMergeRequestsTable,
     EntityGitlabMergeRequestStatsCard,
     EntityGitlabPeopleCard,
@@ -9,16 +10,13 @@ import {
 import {EntityGithubActionsContent, isGithubActionsAvailable} from "@backstage/plugin-github-actions";
 import {EntityGithubInsightsContributorsCard} from "@roadiehq/backstage-plugin-github-insights";
 import {EntityGithubDeploymentsCard, isGithubDeploymentsAvailable} from "@backstage/plugin-github-deployments";
-import {
-    EntityGithubPullRequestsOverviewCard,
-    EntityGithubPullRequestsTable
-} from "@roadiehq/backstage-plugin-github-pull-requests";
+import {EntityGithubPullRequestsOverviewCard, EntityGithubPullRequestsTable} from "@roadiehq/backstage-plugin-github-pull-requests";
 
 import {EmptyState} from "@backstage/core-components";
 import Button from "@material-ui/core/Button";
 import React from "react";
 import {EntityArgoCDOverviewCard, isArgocdAvailable} from "@roadiehq/backstage-plugin-argo-cd";
-import {Grid} from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 
 
 export const cicdContent = (
@@ -67,6 +65,9 @@ export const cicdContent = (
                 </Grid>
                 <Grid item md={6}>
                     <EntityGitlabPeopleCard />
+                </Grid>
+                <Grid item md={6}>
+                    <EntityGitlabCoverageCard />
                 </Grid>
             </EntitySwitch.Case>
 

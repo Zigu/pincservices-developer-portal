@@ -1,4 +1,4 @@
-import Grid from "@mui/material/Grid";
+import Grid from "@material-ui/core/Grid";
 import {
     EntityAboutCard,
     EntityHasSystemsCard,
@@ -17,7 +17,7 @@ import {areLinksAvailable} from "../../../../lib/conditions";
 import {CustomRenderNode} from "../../CustomRenderNode";
 
 export const domainOverviewContent = (
-    <Grid container spacing={3} alignItems="start">
+    <Grid container spacing={3} alignItems="flex-start">
         <Grid item xs={12}>
             {entityWarningContent}
         </Grid>

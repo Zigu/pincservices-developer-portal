@@ -1,4 +1,4 @@
-import {Grid} from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import {EntityAboutCard, EntityLinksCard, EntitySwitch,} from "@backstage/plugin-catalog";
 import React from "react";
 import {entityWarningContent} from "../EntityWarning";
@@ -8,12 +8,17 @@ import {EntityJiraOverviewCard, isJiraAvailable} from "@roadiehq/backstage-plugi
 import {EntityArgoCDOverviewCard, isArgocdAvailable} from "@roadiehq/backstage-plugin-argo-cd";
 import {EntityGitlabReleasesCard, isGitlabAvailable} from "@immobiliarelabs/backstage-plugin-gitlab";
 import {areLinksAvailable} from "../../../../lib/conditions";
+import {EntityHighlightsCard} from "@rsc-labs/backstage-highlights-plugin";
 
 
 export const systemOverviewContent = (
     <Grid container spacing={3}>
         <Grid item xs={12}>
             {entityWarningContent}
+        </Grid>
+
+        <Grid item md={12} xs={12}>
+            <EntityHighlightsCard/>
         </Grid>
 
         <Grid item container spacing={3} xs={12} md={5} lg={5}>
