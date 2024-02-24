@@ -98,6 +98,9 @@ argocd:
   password: test
   appLocatorMethods: []
 
+scorecards:
+  jsonDataUrl: https://raw.githubusercontent.com/Oriflame/backstage-plugins/main/plugins/score-card/sample-data/
+
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
 # and an external cloud storage when deploying TechDocs for production use-case.
@@ -114,6 +117,9 @@ techdocs:
       accountId: ${AWS_S3_ACCOUNT_ID}
       region: 'eu-central-1'
 auth:
+  autologout:
+    enabled: true
+    idleTimeoutMinutes: 10
   # see https://backstage.io/docs/auth/ to learn about auth providers
   providers: {}
 

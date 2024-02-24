@@ -2,7 +2,7 @@ import {BackstageTypography} from "@backstage/theme";
 
 export const typography: BackstageTypography = {
     htmlFontSize: 16,
-    fontFamily: 'sans-serif',
+    fontFamily: 'Poppins, sans-serif',
     h1: {
         fontSize: 54,
         fontWeight: 700,

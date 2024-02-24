@@ -1,7 +1,17 @@
-import { UnifiedThemeOptions } from '@backstage/theme';
-
+import {UnifiedThemeOptions} from '@backstage/theme';
+/*
 const robotoFont = {
   fontFamily: 'Roboto flex, sans-serif',
+  fontWeight: 'light',
+  letterSpacing: 0,
+  paragraphSpacing: 0,
+  paragraphIndent: 0,
+  textCase: 'none',
+  textDecoration: 'none'
+};
+*/
+const poppinsFont = {
+  fontFamily: 'Poppins, sans-serif',
   fontWeight: 'light',
   letterSpacing: 0,
   paragraphSpacing: 0,
@@ -13,13 +23,13 @@ const robotoFont = {
 export const components: UnifiedThemeOptions['components'] = {
     MuiTypography: {
         styleOverrides: {
-            root: robotoFont
+            root: poppinsFont
         },
     },
     MuiCssBaseline: {
         styleOverrides: {
             '@global': {
-                '@font-face': robotoFont
+                '@font-face': poppinsFont
             }
         }
     }

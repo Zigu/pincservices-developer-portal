@@ -1,10 +1,21 @@
 import Grid from '@material-ui/core/Grid';
-import {EntityAboutCard, EntityLabelsCard, EntityLinksCard, EntitySwitch, hasLabels, isComponentType} from "@backstage/plugin-catalog";
+import {
+  EntityAboutCard,
+  EntityLabelsCard,
+  EntityLinksCard,
+  EntitySwitch,
+  hasLabels,
+  isComponentType
+} from "@backstage/plugin-catalog";
 import React from "react";
 import {entityWarningContent} from "../EntityWarning";
 import {EntitySonarQubeCard} from "@backstage/plugin-sonarqube";
 import {isSonarQubeAvailable} from "@backstage/plugin-sonarqube-react";
-import {EntityGitlabLanguageCard, EntityGitlabReleasesCard, isGitlabAvailable} from "@immobiliarelabs/backstage-plugin-gitlab";
+import {
+  EntityGitlabLanguageCard,
+  EntityGitlabReleasesCard,
+  isGitlabAvailable
+} from "@immobiliarelabs/backstage-plugin-gitlab";
 import {EntityJiraOverviewCard, isJiraAvailable} from "@roadiehq/backstage-plugin-jira";
 import {EntityArgoCDOverviewCard, isArgocdAvailable} from "@roadiehq/backstage-plugin-argo-cd";
 import {areLinksAvailable, isChangelogFileRefAvailable} from "../../../../lib/conditions";
@@ -12,6 +23,7 @@ import {EntityChangelogCard} from "@rsc-labs/backstage-changelog-plugin";
 import {EntityEndOfLifeCard, isEndOfLifeAvailable} from "@dweber019/backstage-plugin-endoflife";
 import {EntityProvidedApisCard} from "@backstage/plugin-api-docs";
 import {minimizedApiEntityColumns} from "../../renderingUtils";
+import {EntityHighlightsCard} from "@rsc-labs/backstage-highlights-plugin";
 
 export const componentOverviewContent = (
   <Grid container spacing={3}>
@@ -51,11 +63,9 @@ export const componentOverviewContent = (
         </EntitySwitch.Case>
       </EntitySwitch>
 
-      {/*
       <Grid item xs={12}>
         <EntityHighlightsCard />
       </Grid>
-      */}
 
       { /* Quality section */}
       <EntitySwitch>
