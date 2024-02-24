@@ -1,15 +1,11 @@
-import { Grid } from '@material-ui/core';
-import {
-    EntityAboutCard,
-    EntityLinksCard,
-    EntitySwitch,
-} from "@backstage/plugin-catalog";
+import {Grid} from '@material-ui/core';
+import {EntityAboutCard, EntityLinksCard, EntitySwitch,} from "@backstage/plugin-catalog";
 import React from "react";
 import {entityWarningContent} from "../EntityWarning";
 import {EntitySonarQubeCard} from "@backstage/plugin-sonarqube";
 import {isSonarQubeAvailable} from "@backstage/plugin-sonarqube-react";
 import {EntityJiraOverviewCard, isJiraAvailable} from "@roadiehq/backstage-plugin-jira";
-import {EntityArgoCDStatusCard, isArgocdAvailable} from "@internal/plugin-pincservices-argocd";
+import {EntityArgoCDOverviewCard, isArgocdAvailable} from "@roadiehq/backstage-plugin-argo-cd";
 import {EntityGitlabReleasesCard, isGitlabAvailable} from "@immobiliarelabs/backstage-plugin-gitlab";
 import {areLinksAvailable} from "../../../../lib/conditions";
 
@@ -49,7 +45,7 @@ export const systemOverviewContent = (
             <EntitySwitch>
                 <EntitySwitch.Case if={isArgocdAvailable}>
                     <Grid item xs={12}>
-                        <EntityArgoCDStatusCard />
+                        <EntityArgoCDOverviewCard />
                     </Grid>
                 </EntitySwitch.Case>
             </EntitySwitch>

@@ -1,9 +1,5 @@
 import {Grid} from '@material-ui/core';
-import {
-  EntityAboutCard, EntityLabelsCard,
-  EntityLinksCard,
-  EntitySwitch, hasLabels
-} from "@backstage/plugin-catalog";
+import {EntityAboutCard, EntityLabelsCard, EntityLinksCard, EntitySwitch, hasLabels} from "@backstage/plugin-catalog";
 import React from "react";
 import {entityWarningContent} from "../EntityWarning";
 import {EntitySonarQubeCard} from "@backstage/plugin-sonarqube";
@@ -14,7 +10,7 @@ import {
   isGitlabAvailable
 } from "@immobiliarelabs/backstage-plugin-gitlab";
 import {EntityJiraOverviewCard, isJiraAvailable} from "@roadiehq/backstage-plugin-jira";
-import {EntityArgoCDStatusCard, isArgocdAvailable} from "@internal/plugin-pincservices-argocd";
+import {EntityArgoCDOverviewCard, isArgocdAvailable} from "@roadiehq/backstage-plugin-argo-cd";
 import {areLinksAvailable, isChangelogFileRefAvailable} from "../../../../lib/conditions";
 import {EntityChangelogCard} from "@rsc-labs/backstage-changelog-plugin";
 import {EntityEndOfLifeCard, isEndOfLifeAvailable} from "@dweber019/backstage-plugin-endoflife";
@@ -84,7 +80,7 @@ export const componentOverviewContent = (
       <EntitySwitch>
         <EntitySwitch.Case if={isArgocdAvailable}>
           <Grid item xs={12}>
-            <EntityArgoCDStatusCard/>
+            <EntityArgoCDOverviewCard />
           </Grid>
         </EntitySwitch.Case>
       </EntitySwitch>

@@ -1,12 +1,8 @@
 import {Grid} from '@material-ui/core';
-import {
-  EntityAboutCard,
-  EntityLinksCard,
-  EntitySwitch,
-} from "@backstage/plugin-catalog";
+import {EntityAboutCard, EntityLinksCard, EntitySwitch,} from "@backstage/plugin-catalog";
 import React from "react";
 import {entityWarningContent} from "../EntityWarning";
-import {EntityArgoCDStatusCard, isArgocdAvailable} from "@internal/plugin-pincservices-argocd";
+import {EntityArgoCDOverviewCard, isArgocdAvailable} from "@roadiehq/backstage-plugin-argo-cd";
 
 import {areLinksAvailable} from "../../../../lib/conditions";
 import {EntityEndOfLifeCard, isEndOfLifeAvailable} from "@dweber019/backstage-plugin-endoflife";
@@ -38,7 +34,7 @@ export const resourceOverviewContent = (
       <EntitySwitch>
         <EntitySwitch.Case if={isArgocdAvailable}>
           <Grid item xs={12}>
-            <EntityArgoCDStatusCard/>
+            <EntityArgoCDOverviewCard/>
           </Grid>
         </EntitySwitch.Case>
       </EntitySwitch>
