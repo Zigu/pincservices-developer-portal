@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: pincservices-entities
+spec:
+  type: url
+  targets:
+    - https://github.com/Zigu/getting-things-done/blob/develop/catalog-info.yaml
+    - https://github.com/Zigu/php-comments/blob/main/catalog-info.yaml
+    - https://github.com/Zigu/akka-sample/blob/master/catalog-info.yaml

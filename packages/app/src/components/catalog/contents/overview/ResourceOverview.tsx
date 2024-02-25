@@ -1,9 +1,5 @@
 import Grid from '@material-ui/core/Grid';
-import {
-    EntityAboutCard,
-    EntityLinksCard,
-    EntitySwitch,
-} from "@backstage/plugin-catalog";
+import {EntityAboutCard, EntityLinksCard, EntitySwitch,} from "@backstage/plugin-catalog";
 import React from "react";
 import {entityWarningContent} from "../EntityWarning";
 import {EntityArgoCDOverviewCard, isArgocdAvailable} from "@roadiehq/backstage-plugin-argo-cd";
@@ -17,7 +13,7 @@ export const resourceOverviewContent = (
             {entityWarningContent}
         </Grid>
 
-        <Grid item container spacing={3} xs={12} md={5} lg={5}>
+        <Grid item container spacing={3} xs={12} md={5} lg={5} alignContent="flex-start">
             { /* Generic info section */ }
             <EntitySwitch>
                 <EntitySwitch.Case if={areLinksAvailable}>
@@ -35,7 +31,7 @@ export const resourceOverviewContent = (
         </Grid>
 
 
-        <Grid item container spacing={3} xs={12} md={7} lg={7}>
+        <Grid item container spacing={3} xs={12} md={7} lg={7} alignContent="flex-start">
             { /* Releases section */ }
             <EntitySwitch>
                 <EntitySwitch.Case if={isArgocdAvailable}>

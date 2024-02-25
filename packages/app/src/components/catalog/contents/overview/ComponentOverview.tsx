@@ -23,7 +23,6 @@ import {EntityChangelogCard} from "@rsc-labs/backstage-changelog-plugin";
 import {EntityEndOfLifeCard, isEndOfLifeAvailable} from "@dweber019/backstage-plugin-endoflife";
 import {EntityProvidedApisCard} from "@backstage/plugin-api-docs";
 import {minimizedApiEntityColumns} from "../../renderingUtils";
-import {EntityHighlightsCard} from "@rsc-labs/backstage-highlights-plugin";
 
 export const componentOverviewContent = (
   <Grid container spacing={3}>
@@ -62,11 +61,11 @@ export const componentOverviewContent = (
           </Grid>
         </EntitySwitch.Case>
       </EntitySwitch>
-
+      {/*
       <Grid item xs={12}>
         <EntityHighlightsCard />
       </Grid>
-
+      */}
       { /* Quality section */}
       <EntitySwitch>
         <EntitySwitch.Case if={isSonarQubeAvailable}>

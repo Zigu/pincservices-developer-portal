@@ -8,7 +8,6 @@ import {EntityJiraOverviewCard, isJiraAvailable} from "@roadiehq/backstage-plugi
 import {EntityArgoCDOverviewCard, isArgocdAvailable} from "@roadiehq/backstage-plugin-argo-cd";
 import {EntityGitlabReleasesCard, isGitlabAvailable} from "@immobiliarelabs/backstage-plugin-gitlab";
 import {areLinksAvailable} from "../../../../lib/conditions";
-import {EntityHighlightsCard} from "@rsc-labs/backstage-highlights-plugin";
 
 
 export const systemOverviewContent = (
@@ -16,12 +15,13 @@ export const systemOverviewContent = (
         <Grid item xs={12}>
             {entityWarningContent}
         </Grid>
-
+        {/*
         <Grid item md={12} xs={12}>
             <EntityHighlightsCard/>
         </Grid>
+        */}
 
-        <Grid item container spacing={3} xs={12} md={5} lg={5}>
+        <Grid item container spacing={3} xs={12} md={5} lg={5} alignContent="flex-start">
             { /* Generic info section */ }
             <EntitySwitch>
                 <EntitySwitch.Case if={areLinksAvailable}>
@@ -45,7 +45,7 @@ export const systemOverviewContent = (
             </EntitySwitch>
         </Grid>
 
-        <Grid item container spacing={3} xs={12} md={7} lg={7}>
+        <Grid item container spacing={3} xs={12} md={7} lg={7} alignContent="flex-start">
             { /* Releases section */ }
             <EntitySwitch>
                 <EntitySwitch.Case if={isArgocdAvailable}>

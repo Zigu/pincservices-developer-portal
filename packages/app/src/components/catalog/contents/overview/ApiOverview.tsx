@@ -18,7 +18,7 @@ export const apiOverviewContent = (
         </Grid>
         */}
         { /* Generic info section */ }
-        <Grid item container spacing={3} xs={12} md={5} lg={5}>
+        <Grid item container spacing={3} xs={12} md={5} lg={5} alignContent="flex-start">
             <EntitySwitch>
                 <EntitySwitch.Case if={areLinksAvailable}>
                     <Grid item xs={12}>
@@ -32,7 +32,7 @@ export const apiOverviewContent = (
         </Grid>
 
         { /* Relation section */ }
-        <Grid item container spacing={3} xs={12} md={7} lg={7}>
+        <Grid item container spacing={3} xs={12} md={7} lg={7} alignContent="flex-start">
             <Grid item xs={12}>
                 <EntityCatalogGraphCard variant="gridItem" height={400} renderNode={CustomRenderNode}/>
             </Grid>

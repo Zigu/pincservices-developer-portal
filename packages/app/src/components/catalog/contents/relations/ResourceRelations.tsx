@@ -1,9 +1,6 @@
 import Grid from '@material-ui/core/Grid';
 import {Direction, EntityCatalogGraphCard} from "@backstage/plugin-catalog-graph";
-import {
-    EntityDependsOnComponentsCard,
-    EntityDependsOnResourcesCard,
-} from "@backstage/plugin-catalog";
+import {EntityDependsOnComponentsCard, EntityDependsOnResourcesCard,} from "@backstage/plugin-catalog";
 import React from "react";
 import {CustomRenderNode} from "../../CustomRenderNode";
 import {minimizedComponentsEntityColumns, minimizedResourceEntityColumns} from "../../renderingUtils";
@@ -20,7 +17,7 @@ export const resourceRelationsContent = (
             />
         </Grid>
 
-        <Grid item xs={12} md={6} container spacing={1}>
+        <Grid item xs={12} md={6} container spacing={1} alignContent="flex-start">
             <Grid item xs={12}>
                 <EntityDependsOnComponentsCard variant="gridItem" columns={minimizedComponentsEntityColumns}/>
             </Grid>

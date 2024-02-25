@@ -1,47 +1,36 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import { apiDocsPlugin, ApiExplorerPage } from '@backstage/plugin-api-docs';
-import {
-  CatalogEntityPage,
-  CatalogIndexPage,
-  catalogPlugin,
-} from '@backstage/plugin-catalog';
-import {
-  CatalogImportPage,
-  catalogImportPlugin,
-} from '@backstage/plugin-catalog-import';
-import { ScaffolderPage, scaffolderPlugin } from '@backstage/plugin-scaffolder';
-import { orgPlugin } from '@backstage/plugin-org';
-import { SearchPage } from '@backstage/plugin-search';
-import { TechRadarPage } from '@backstage/plugin-tech-radar';
-import {
-  TechDocsIndexPage,
-  techdocsPlugin,
-  TechDocsReaderPage,
-} from '@backstage/plugin-techdocs';
-import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
-import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
-import { UserSettingsPage } from '@backstage/plugin-user-settings';
+import {Route} from 'react-router-dom';
+import {apiDocsPlugin, ApiExplorerPage} from '@backstage/plugin-api-docs';
+import {CatalogEntityPage, CatalogIndexPage, catalogPlugin,} from '@backstage/plugin-catalog';
+import {CatalogImportPage, catalogImportPlugin,} from '@backstage/plugin-catalog-import';
+import {ScaffolderPage, scaffolderPlugin} from '@backstage/plugin-scaffolder';
+import {ScaffolderFieldExtensions} from '@backstage/plugin-scaffolder-react';
+import {orgPlugin} from '@backstage/plugin-org';
+import {SearchPage} from '@backstage/plugin-search';
+import {TechRadarPage} from '@backstage/plugin-tech-radar';
+import {TechDocsIndexPage, techdocsPlugin, TechDocsReaderPage,} from '@backstage/plugin-techdocs';
+import {TechDocsAddons} from '@backstage/plugin-techdocs-react';
+import {ReportIssue} from '@backstage/plugin-techdocs-module-addons-contrib';
+import {UserSettingsPage} from '@backstage/plugin-user-settings';
 import {apis, keycloakAuthApiRef} from './apis';
-import { entityPage } from './components/catalog/EntityPage';
-import { searchPage } from './components/search/SearchPage';
-import { Root } from './components/Root';
+import {entityPage} from './components/catalog/EntityPage';
+import {searchPage} from './components/search/SearchPage';
+import {Root} from './components/Root';
 
 import {AlertDisplay, AutoLogout, OAuthRequestDialog, SignInPage} from '@backstage/core-components';
-import { createApp } from '@backstage/app-defaults';
-import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
-import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
-import { RequirePermission } from '@backstage/plugin-permission-react';
+import {createApp} from '@backstage/app-defaults';
+import {AppRouter, FlatRoutes} from '@backstage/core-app-api';
+import {CatalogGraphPage} from '@backstage/plugin-catalog-graph';
+import {RequirePermission} from '@backstage/plugin-permission-react';
 import {catalogEntityCreatePermission, catalogEntityReadPermission} from '@backstage/plugin-catalog-common/alpha';
-import { CatalogUnprocessedEntitiesPage } from '@backstage/plugin-catalog-unprocessed-entities';
-import { DevToolsPage } from '@backstage/plugin-devtools';
+import {CatalogUnprocessedEntitiesPage} from '@backstage/plugin-catalog-unprocessed-entities';
+import {DevToolsPage} from '@backstage/plugin-devtools';
 import {CustomDevToolsPage} from "./components/devtools/CustomDevToolsPage";
 import {HomePage} from "./components/home/HomePage";
 import {HomepageCompositionRoot, VisitListener} from "@backstage/plugin-home";
 import {PlaylistIndexPage, PlaylistPage} from "@backstage/plugin-playlist";
 
 // Additional system icons
-
 import CodeIcon from '@material-ui/icons/Code'
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutlined';
 import ViewListIcon from '@material-ui/icons/ViewList';
@@ -54,6 +43,7 @@ import {JiraIcon} from "./components/customIcons/JiraIcon";
 import {ConfluenceSmallIcon} from "./components/customIcons/ConfluenceSmallIcon";
 import developerPortalThemes from "./themes/developerPortalThemes";
 import {apiExplorerColumns, catalogIndexColumns} from "./components/catalog/renderingUtils";
+import {DevfileSelectorFieldExtension} from "@redhat-developer/plugin-scaffolder-frontend-module-devfile-field";
 
 const app = createApp({
   apis,
@@ -107,7 +97,7 @@ const routes = (
     <Route path="/" element={<HomepageCompositionRoot/>}>
       <HomePage/>
     </Route>
-    <Route path="/catalog" element={<RequirePermission permission={catalogEntityReadPermission} resourceRef="*"><CatalogIndexPage columns={catalogIndexColumns}/></RequirePermission>}/>
+    <Route path="/catalog" element={<RequirePermission permission={catalogEntityReadPermission} resourceRef="*"><CatalogIndexPage columns={catalogIndexColumns} pagination /></RequirePermission>}/>
     <Route
       path="/catalog/:namespace/:kind/:name"
       element={<CatalogEntityPage />}
@@ -123,7 +113,11 @@ const routes = (
         <ReportIssue />
       </TechDocsAddons>
     </Route>
-    <Route path="/create" element={<ScaffolderPage />} />
+    <Route path="/create" element={<ScaffolderPage />}>
+      <ScaffolderFieldExtensions>
+        <DevfileSelectorFieldExtension />
+      </ScaffolderFieldExtensions>
+    </Route>
     <Route path="/api-docs" element={<ApiExplorerPage columns={apiExplorerColumns}/>} />
     <Route
       path="/tech-radar"

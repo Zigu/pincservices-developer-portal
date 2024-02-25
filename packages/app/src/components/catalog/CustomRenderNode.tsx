@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { DependencyGraphTypes } from '@backstage/core-components';
-import { humanizeEntityRef } from '@backstage/plugin-catalog-react';
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import {DependencyGraphTypes} from '@backstage/core-components';
+import {humanizeEntityRef} from '@backstage/plugin-catalog-react';
+import React, {useLayoutEffect, useRef, useState} from 'react';
 
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import classNames from 'classnames';
 
-import { DEFAULT_NAMESPACE } from '@backstage/catalog-model';
+import {DEFAULT_NAMESPACE} from '@backstage/catalog-model';
 import {EntityNodeData} from "@backstage/plugin-catalog-graph";
 import {useApp} from "@backstage/core-plugin-api";
 
@@ -177,11 +177,17 @@ export function CustomRenderNode({
     const paddedWidth = paddedIconWidth + width + padding * 2;
     const paddedHeight = height + padding * 2;
 
-    const displayTitle =
+    let displayTitle =
         title ??
         (kind && name && namespace
             ? humanizeEntityRef({ kind, name, namespace })
             : id);
+
+    if (kind?.toLowerCase() === 'user') {
+        const profile = entity.spec?.profile;
+        // @ts-ignore
+        displayTitle = profile?.displayName;
+    }
 
     return (
         <g onClick={onClick} className={classNames(onClick && classes.clickable)}>

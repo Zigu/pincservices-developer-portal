@@ -4249,7 +4249,7 @@
     zod "^3.22.4"
     zod-to-json-schema "^3.20.4"
 
-"@backstage/plugin-scaffolder-react@^1.8.0":
+"@backstage/plugin-scaffolder-react@^1.5.5", "@backstage/plugin-scaffolder-react@^1.8.0":
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-scaffolder-react/-/plugin-scaffolder-react-1.8.0.tgz#67b833716806b21d1f4b879aa93df89ed758fdfc"
   integrity sha512-cS8OW+fbAZde0drFWlrUIEJ5KyDFMno1Nj0GuV1zPsPvrZeOnKsgH1BjcGAYZ2tp2OkDFSiuG13Olk78bqSbmA==
@@ -4287,7 +4287,7 @@
     zod "^3.22.4"
     zod-to-json-schema "^3.20.4"
 
-"@backstage/plugin-scaffolder@^1.18.0":
+"@backstage/plugin-scaffolder@^1.15.0", "@backstage/plugin-scaffolder@^1.18.0":
   version "1.18.0"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-scaffolder/-/plugin-scaffolder-1.18.0.tgz#141f18a3b45236b76398dcee6706ce0cff01b7e2"
   integrity sha512-KHTHI1UCpgSqWxMmCkQKiR148TFILLdPlmk0Ba7iUKgi5EblMowhwlTdo7XRVC0LNjSwkD8OMjMPQlhZdVEqug==
@@ -8141,6 +8141,22 @@
     "@react-spring/shared" "~9.7.3"
     "@react-spring/types" "~9.7.3"
 
+"@redhat-developer/plugin-scaffolder-frontend-module-devfile-field@^0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@redhat-developer/plugin-scaffolder-frontend-module-devfile-field/-/plugin-scaffolder-frontend-module-devfile-field-0.20.0.tgz#b9f61b158f8f0199085a7e63f894131927c0af77"
+  integrity sha512-ize9Qy9e2Q7sPcGepw0l9H++h9z8u2l3GclAtFX6IF7xqNs31pxM+Q2diaNk1L6ymx8qldlzKBxtZTZBtCpxpA==
+  dependencies:
+    "@backstage/core-components" "^0.13.5"
+    "@backstage/core-plugin-api" "^1.6.0"
+    "@backstage/plugin-scaffolder" "^1.15.0"
+    "@backstage/plugin-scaffolder-react" "^1.5.5"
+    "@backstage/theme" "^0.4.2"
+    "@material-ui/core" "^4.12.2"
+    "@material-ui/icons" "^4.9.1"
+    "@material-ui/lab" "4.0.0-alpha.61"
+    react-use "^17.2.4"
+    zod "^3.22.4"
+
 "@redhat-developer/plugin-scaffolder-odo-actions@^0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@redhat-developer/plugin-scaffolder-odo-actions/-/plugin-scaffolder-odo-actions-0.20.0.tgz#8a56a46b6a03ae6009f7cdf533cd40de0def2cee"
@@ -8436,7 +8452,7 @@
     winston "^3.2.1"
     yn "^4.0.0"
 
-"@rsc-labs/backstage-highlights-plugin@^0.2.0":
+"@rsc-labs/backstage-highlights-plugin@^0.1.5":
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@rsc-labs/backstage-highlights-plugin/-/backstage-highlights-plugin-0.1.5.tgz#64810367163de82ab60c9c841ae8470f5793faab"
   integrity sha512-5k+wnFA/pI0U9Wu5V/NSnrmS3MhxUHYuG92hT0E0RRWsdajida9PbKyG2tY/PMpf+YtbEyWef2ArYIDjiiXXSA==
@@ -10925,12 +10941,19 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.7.tgz#50ae4353eaaddc04044279812f52c8c65857dbcb"
   integrity sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==
 
-"@types/react-dom@*", "@types/react-dom@<18.0.0", "@types/react-dom@^18", "@types/react-dom@^18.0.0":
+"@types/react-dom@*", "@types/react-dom@^18.0.0":
   version "18.2.19"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.19.tgz#b84b7c30c635a6c26c6a6dfbb599b2da9788be58"
   integrity sha512-aZvQL6uUbIJpjZk4U8JZGbau9KDeAwMfmhyWorxgBkqDIEf6ROjRozcmPIicqsUwPUjbkDfHKgGee1Lq65APcA==
   dependencies:
     "@types/react" "*"
+
+"@types/react-dom@<18.0.0":
+  version "17.0.25"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.25.tgz#e0e5b3571e1069625b3a3da2b279379aa33a0cb5"
+  integrity sha512-urx7A7UxkZQmThYA4So0NelOVjx3V4rNFVJwp0WZlbIK5eM4rNJDiN3R/E9ix0MBh6kAEojk/9YL+Te6D9zHNA==
+  dependencies:
+    "@types/react" "^17"
 
 "@types/react-measure@^2.0.6":
   version "2.0.12"
@@ -10970,10 +10993,19 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.13.1 || ^17.0.0", "@types/react@^16.13.1 || ^17.0.0 || ^18.0.0", "@types/react@^18", "@types/react@^18.0.0":
+"@types/react@*", "@types/react@^16.13.1 || ^17.0.0 || ^18.0.0", "@types/react@^18.0.0":
   version "18.2.58"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.58.tgz#22082d12898d11806f4a1aefb5583116a047493d"
   integrity sha512-TaGvMNhxvG2Q0K0aYxiKfNDS5m5ZsoIBBbtfUorxdH4NGSXIlYvZxLJI+9Dd3KjeB3780bciLyAb7ylO8pLhPw==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^16.13.1 || ^17.0.0", "@types/react@^17":
+  version "17.0.75"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.75.tgz#cffbc76840a12fcadaf5a3cf14878bb06efcf73d"
+  integrity sha512-MSA+NzEzXnQKrqpO63CYqNstFjsESgvJAdAyyJ1n6ZQq/GLgf6nOfIKwk+Twuz0L1N6xPe+qz5xRCJrbhMaLsw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -11831,6 +11863,7 @@ anymatch@^3.0.3, anymatch@~3.1.2:
     "@backstage/plugin-search" "^1.4.6"
     "@backstage/plugin-search-react" "^1.7.6"
     "@backstage/plugin-sonarqube" "^0.7.12"
+    "@backstage/plugin-sonarqube-react" "^0.1.13"
     "@backstage/plugin-tech-radar" "^0.6.13"
     "@backstage/plugin-techdocs" "^1.10.0"
     "@backstage/plugin-techdocs-module-addons-contrib" "^1.1.5"
@@ -11849,7 +11882,8 @@ anymatch@^3.0.3, anymatch@~3.1.2:
     "@roadiehq/backstage-plugin-github-pull-requests" "^2.5.20"
     "@roadiehq/backstage-plugin-jira" "^2.5.0"
     "@rsc-labs/backstage-changelog-plugin" "^0.4.4"
-    "@rsc-labs/backstage-highlights-plugin" "^0.2.0"
+    "@rsc-labs/backstage-highlights-plugin" "^0.1.5"
+    classnames "^2.5.1"
     history "^5.0.0"
     react "^18.0.2"
     react-dom "^18.0.2"
